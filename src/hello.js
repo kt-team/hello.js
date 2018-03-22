@@ -1800,12 +1800,11 @@ hello.api = function() {
 
 		// Add base
 		if (!url.match(/^https?:\/\//)) {
-			if (o.base === 'https://api.vk.com/method/') {
-				url = o.base + url + '&v=5.73';
-			}
-			else {
-				url = o.base + url;
-			}
+			url = o.base + url;
+		}
+
+		if (o.base === 'https://api.vk.com/method/') {
+			url = o.base + url + '&v=5.73';
 		}
 
 		// Define the request URL
