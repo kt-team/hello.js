@@ -1952,12 +1952,7 @@ hello.api = function() {
 
 		// Add base
 		if (!url.match(/^https?:\/\//)) {
-			if (o.base === 'https://api.vk.com/method/') {
-				url = o.base + url + '&v=5.73';
-			}
-			else {
-				url = o.base + url;
-			}
+			url = o.base + url;
 		}
 
 		// Define the request URL
@@ -2176,6 +2171,10 @@ hello.utils.extend(hello.utils, {
 
 			// Construct the path
 			var path = _this.qs(p.url, p.query);
+
+			if (p.url === 'https://api.vk.com/method/users.get') {
+				path = path + '&v=5.73';
+			}
 
 			// Proxy the request through a server
 			// Used for signing OAuth1
