@@ -5557,7 +5557,7 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 
 		if (o !== null && 'response' in o && o.response !== null && o.response.length) {
 			o = o.response[0];
-			o.id = o.uid;
+			o.id = o.id;
 			o.thumbnail = o.picture = o.photo_max;
 			o.name = o.first_name + ' ' + o.last_name;
 
